@@ -18,7 +18,7 @@ org/zerock/guestbook/entity/QGuestbook.java
 org/zerock/guestbook/dto/GuestbookDTO.java
  org.zerock.guestbook.dto.GuestbookDTO
  org.zerock.guestbook.dto.GuestbookDTO$GuestbookDTOBuilder
-org/zerock/guestbook/service/GuestbookServiceImpl.java
- org.zerock.guestbook.service.GuestbookServiceImpl
 org/zerock/guestbook/service/GuestbookService.java
  org.zerock.guestbook.service.GuestbookService
+org/zerock/guestbook/service/GuestbookServiceImpl.java
+ org.zerock.guestbook.service.GuestbookServiceImpl
