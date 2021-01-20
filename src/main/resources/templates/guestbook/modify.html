@@ -4,6 +4,7 @@
     <th:block th:fragment="content">
         <h1 class="mt-4">방명록 수정</h1>
         <form action="/guestbook/modify" method="post">
+            <input type="hidden" name="page" th:value="${requestDTO.page}">
             <div class="form-group">
                 <label>글번호</label>
                 <input type="text" class="form-control" name="gno" th:value="${dto.gno}" readonly>
@@ -35,12 +36,23 @@
                 var actionForm = $("form");
                 $(".removeBtn").click(function(){
                     console.log("removeBtn Clicked");
+                    actionForm.attr("action", "/guestbook/remove").attr("method", "post");
+                    actionForm.submit();
                 });
                 $(".modifyBtn").click(function(){
                     console.log("modifyBtn Clicked");
+                    if(!confirm("수정하시겠습니까?")){
+                        return ;
+                    }
+                    actionForm.attr("action", "/guestbook/modify").attr("method", "post").submit();
                 });
                 $(".listBtn").click(function(){
                     console.log("listBtn Clicked");
+                    var pageInfo = $("input[name='page']");
+                    actionForm.empty();
+                    actionForm.append(pageInfo);
+                    actionForm.attr("action", "/guestbook/list").attr("method", "get");
+                    actionForm.submit();
                 });
             </script>
         </form>
